@@ -80,7 +80,7 @@ Also I created shell scripts in [repository](https://github.com/labdmitriy/poetr
   `poetry_dist_prepare.sh 1.1.13`
 
 - `./poetry_dist_install.sh`  
-  Extract distribution archive located in `/tmp/poetry_dist` folder. 
+  Extract distribution archive located in `/tmp/poetry_dist` folder and install Poetry offline. 
 
   Usage example (on machine without internet):  
   `poetry_dist_install.sh 1.1.13`
