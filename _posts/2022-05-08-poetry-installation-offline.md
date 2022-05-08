@@ -47,7 +47,7 @@ Let's assume for the next steps that:
 
 #### Machine without internet  
 
-**Navigate to the directory where distribution where archive is located**  
+**Navigate to the directory where distribution archive is located**  
 - `cd /tmp/poetry_dist`
 
 **Extract archive**
@@ -58,7 +58,7 @@ Let's assume for the next steps that:
 `python poetry_install.py --uninstall`
 
 - Install poetry from local file:  
-`VERSION=1.1.13; python poetry_install.py --path $(ls poetry-$VERSION*.whl)`
+`env VERSION=1.1.13 bash -c 'python poetry_install.py --path $(ls poetry-$VERSION*.whl)'`
 
 - Delete intermediate files  
 `rm poetry_install.py *.whl`
