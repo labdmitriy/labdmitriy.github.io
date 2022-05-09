@@ -28,6 +28,7 @@ url: https://labdmitriy.github.io
 repository: "labdmitriy/labdmitriy.github.io"
 github: [metadata]
 breadcrumbs: false
+search_full_content: true
 
 
 # Build settings
