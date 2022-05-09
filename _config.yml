@@ -64,7 +64,7 @@ plugins:
 
 author:
   name   : "Dmitry Labazkin"
-  avatar : "/assets/images/photo.jpeg"
+  avatar : "/assets/images/bio-photo.jpg"
   bio    : ""
   links:
     - label: "Email"
