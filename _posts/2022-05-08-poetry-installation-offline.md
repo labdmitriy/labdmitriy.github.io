@@ -54,8 +54,7 @@ Archive required files:
 tar -czvf poetry_dist.tar.gz poetry_install.py *.whl --remove-files
 ```
 
-Copy archive to the machine without internet:
-Destination folder
+Copy archive to the machine without internet to the destination folder:
 ```shell
 /tmp/poetry_dist
 ```
