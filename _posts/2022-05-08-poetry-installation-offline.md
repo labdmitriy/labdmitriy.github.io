@@ -85,7 +85,7 @@ Delete intermediate files
 rm poetry_install.py *.whl
 ```
 
-**Check that installation was successful**  
+Check that installation was successful
 ```shell
 poetry --version
 ```
