@@ -1,6 +1,6 @@
 ---
 title: "Poetry installation for offline machine"
-date: 2022-05-08T17:00:00+03:00
+date: 2022-05-08 17:00:00 +0300
 toc: true
 categories:
 - Blog
