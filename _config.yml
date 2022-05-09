@@ -20,8 +20,7 @@ github_username: labdmitriy
 minimal_mistakes_skin: default
 search: true
 
-masthead_title: Blog
-subtitle: My tech notes
+masthead_title: Dmitry Labazkin
 email: labdmitriy@gmail.com
 baseurl: ""
 url: https://labdmitriy.github.io
@@ -65,9 +64,9 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "Dmitry Labazkin"
+  # name   : "Dmitry Labazkin"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : ""
+  bio    : "Hello, my name is Dmitry Labazkin and I love learning."
   location: "Moscow, Russia"
   links:
     - label: "Email"
