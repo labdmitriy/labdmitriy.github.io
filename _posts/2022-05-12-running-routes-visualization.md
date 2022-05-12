@@ -32,4 +32,6 @@ I will provide the visualization example of my 229 runs with a total distance of
 - Each color - one route
 - You can zoom in/out and drag the map
 - Some routes have weird geometry, perhaps there was a problem with GPS tracking in those days, but I decided to keep it "as is"
-<iframe type="text/html" src="/assets/blog/2022-05-12-running-visualization/map.html" width="100%" height="600" frameborder="0" />
+<iframe type="text/html" src="/assets/blog/2022-05-12-running-routes-visualization/map.html" width="100%" height="600" frameborder="0" />
+
+
