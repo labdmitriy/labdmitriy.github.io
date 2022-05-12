@@ -29,7 +29,7 @@ cd /tmp && mkdir poetry_dist && cd poetry_dist
 ```
 
 Choose poetry version required for installation.  
-You can easily check which poetry versions are available for pip >= 21.2 (for older versions you can find corresponding method [here](https://stackoverflow.com/a/26664162):
+You can easily check which poetry versions are available for pip >= 21.2 (for older versions you can find corresponding method [here](https://stackoverflow.com/a/26664162)):
 ```shell
 pip index versions poetry
 ```
@@ -91,7 +91,7 @@ poetry --version
 ```
 
 ## Conclusion
-Probably it will be great to be able to pass pip arguments to [install_poetry()](https://github.com/python-poetry/poetry/blob/edabfce155c5c5445371115d5a83b792b0dc0de2/install-poetry.py#L636) function to be able to reproduce these steps without installation code modification.
+Probably it will be great to be able to pass pip arguments to [install_poetry()](https://github.com/python-poetry/poetry/blob/edabfce155c5c5445371115d5a83b792b0dc0de2/install-poetry.py#L636) function to reproduce these steps without installation code modification.
 <br/>
 
 ## Shell scripts
