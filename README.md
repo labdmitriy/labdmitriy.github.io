@@ -1,1 +1,1 @@
-### My site based on GitHub Pages and Jekyll
+# My site based on GitHub Pages and Jekyll
