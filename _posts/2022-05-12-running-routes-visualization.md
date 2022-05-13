@@ -33,7 +33,7 @@ Although I used only latitude and longitude for visualization, also elevation in
 
 ## Example
 I will provide the visualization example of my 229 runs with a total distance of 1057 km which was created by this script:
-- Data from all 3 applications (Runnkeeper, Strava, Nike Run Club) is used
+- Data from all 3 applications (Runkeeper, Strava, Nike Run Club) is used
 - Each color - one route
 - You can zoom in/out and drag the map
 - Some routes have weird geometry, perhaps there was a problem with GPS tracking in those days, but I decided to keep it "as is"
