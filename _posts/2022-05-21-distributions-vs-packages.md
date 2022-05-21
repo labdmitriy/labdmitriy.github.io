@@ -80,7 +80,7 @@ len(names_without_hyphens_and_underscores)
 ```
 
 Based on these results we can make several interesting conclusions:
-- There are more than half (~53%) of the distributions without any underscores and hyphens
+- There are more than half (~54%) of the distributions without any underscores and hyphens
 - Surprisingly (at least for me) a lot of distributions use hyphens in their names (~43%)
 - Only ~3% of the distributions use underscores
 - There are even distributions with underscores and hyphens but there are very few of them (~0.04%)
