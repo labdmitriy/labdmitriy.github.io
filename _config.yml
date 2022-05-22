@@ -29,7 +29,6 @@ github: [metadata]
 breadcrumbs: false
 search_full_content: true
 
-
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
@@ -127,3 +126,5 @@ analytics:
   google:
     tracking_id          : G-GHRW5HQQ0V
     anonymize_ip         : false # true, false (default)
+
+google_site_verification: "i8_WcUtpFLqeJ8Zn6Rp37ukqO9Flm4gzX-XjwmqpTd8"
