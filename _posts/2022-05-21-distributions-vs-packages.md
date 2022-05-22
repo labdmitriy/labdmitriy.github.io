@@ -17,7 +17,7 @@ So I decided to share some thoughts about it.
 
  
 ## Terminology
-If we try to search for _"package"_ definition, we can find [here](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/glossary.html#term-package) that among others it is:
+If we try to search for _"package"_ definition, we can find in [The Hitchhiker’s Guide to Packaging](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/glossary.html#term-package) that among others it is:
 > A directory containing an \_\_init\_\_.py file ..., and also usually containing modules (possibly along with other packages).
 
 But probably this is not totally correct, because without \_\_init\_\_.py file it is still can be used as a namespace package, and there is a great [article](https://bastien-antoine.fr/2022/01/discovering-python-namespace-packages/) about that.
@@ -25,7 +25,7 @@ But probably this is not totally correct, because without \_\_init\_\_.py file i
 Moreover, we also can read in [Python documentation's glossary](https://docs.python.org/3/glossary.html#term-package) (and it is also discussed in the article above) that there is a little difference between packages and modules:
 > Technically, a package is a Python module with an \_\_path\_\_ attribute.
 
-For _"distribution"_ definition, in the same glossary we can find useful [note](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/glossary.html#term-distribution) that it is:
+For _"distribution"_ definition, in the same glossary of [The Hitchhiker’s Guide to Packaging](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/glossary.html#term-distribution) we can find useful note that it is:
 > A Python distribution is a versioned compressed archive file that contains Python packages, modules, and other resource files 
 
 At the same time:
