@@ -1,6 +1,7 @@
 ---
 title: "Distributions vs packages in Python"
 date: 2022-05-21 23:00:00 +0300
+last_modified_at: 2022-05-22 09:00:00 +0300
 toc: true
 categories:
 - Blog
@@ -20,6 +21,9 @@ If we try to search for _"package"_ definition, we can find [here](https://the-h
 > A directory containing an \_\_init\_\_.py file ..., and also usually containing modules (possibly along with other packages).
 
 But probably this is not totally correct, because without \_\_init\_\_.py file it is still can be used as a namespace package, and there is a great [article](https://bastien-antoine.fr/2022/01/discovering-python-namespace-packages/) about that.
+
+Moreover, we also can read in [Python documentation's glossary](https://docs.python.org/3/glossary.html#term-package) (and it is also discussed in the article above) that there is a little difference between packages and modules:
+> Technically, a package is a Python module with an \_\_path\_\_ attribute.
 
 For _"distribution"_ definition, in the same glossary we can find useful [note](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/glossary.html#term-distribution) that it is:
 > A Python distribution is a versioned compressed archive file that contains Python packages, modules, and other resource files 
@@ -88,7 +92,7 @@ Based on these results we can make several interesting conclusions:
 
 ## Conclusion
 - Terminology for distributions and packages in Python can be quite ambiguous and it takes practice in order to distinguish between them
-- Packages naming has the most specific requirements
-- Distribution naming is still not obvious for me though the choice can be supported at least statistically.
+- Packages and modules technically are very similar and their naming has the most specific requirements
+- Distributions naming is still not obvious for me though the choice can be supported at least statistically
 
 I will be glad to hear feedback including additional reasons for the distributions naming.
