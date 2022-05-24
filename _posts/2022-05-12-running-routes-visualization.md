@@ -1,5 +1,6 @@
 ---
 title: "How to visualize running routes using Python"
+excerpt: Parse GPX files from different services to visualize your running.
 date: 2022-05-12 14:00:00 +0300
 toc: true
 categories:

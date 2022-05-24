@@ -1,5 +1,6 @@
 ---
 title: "Poetry installation for offline machine"
+excerpt: How to install Poetry to machine without internet.
 date: 2022-05-08 17:00:00 +0300
 toc: true
 categories:
