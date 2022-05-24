@@ -37,7 +37,7 @@ To complicate things even more, the glossary in [Python Package User Guide](http
 
 As a result we have two terms that have different meaning but sometimes can be used interchangeably and therefore can confuse beginners.  
 
-It was also complicated for me at the beginning, and I think that you start to clearly distinguish these terms when you install libraries like _"scikit-learn"_ (distribution name) but import _"sklearn"_ (package name), or you delve into building Python libraries yourself.
+It was also complicated for me at the beginning, and I think that you start to clearly distinguish between these terms when you install libraries like _"scikit-learn"_ (distribution name) but import _"sklearn"_ (package name), or you delve into building Python libraries yourself.
 
 
 ## Naming
