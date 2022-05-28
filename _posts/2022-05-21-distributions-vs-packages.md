@@ -183,7 +183,7 @@ Based on these results we can make several interesting conclusions:
 
 
 ### Answers from experts
-I decided to ask the authors of Py-Pkgs and Hypermodern Python cookiecutter template why they choose hyphen and underscore accordingly.
+I decided to ask the authors of Py-Pkgs and Hypermodern Python cookiecutter template why they choose underscore and hyphen accordingly.
 
 **Py-Pkgs**  
 Co-author of the Py-Pckg template, [Tomas Beuzen](https://www.tomasbeuzen.com/), [answers](https://github.com/py-pkgs/py-pkgs-cookiecutter/issues/48) about their choice:  
