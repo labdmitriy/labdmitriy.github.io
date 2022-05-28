@@ -2,7 +2,7 @@
 title: "Distributions vs packages in Python"
 excerpt: How to distinguish between these terms and choose their names.
 date: 2022-05-21 23:00:00 +0300
-last_modified_at: 2022-05-27 20:00:00 +0300
+last_modified_at: 2022-05-29 00:00:00 +0300
 toc: true
 categories:
 - Blog
@@ -213,11 +213,18 @@ Also technical details are very useful:
 >
 >PEP 503 normalization also includes transforming to lowercase. For example, the metadata name for pyyaml is `PyYAML`, whose canonical form is `pyyaml`.  
 >
->There is also the question of normalizing distribution filenames. For wheels, this is specified in [PEP 427](https://peps.python.org/pep-0427/#escaping-and-unicode) and based on underscores and original case (for pyyaml, the wheel filename uses PyYAML). For sdists, this is unspecified (see [this blog](https://blog.yossarian.net/2022/05/09/A-most-vexing-parse-but-for-Python-packaging) and [this issue](https://github.com/pypa/packaging/issues/527)).  
+>There is also the question of normalizing distribution filenames. For wheels, this is specified in [PEP 427](https://peps.python.org/pep-0427/#escaping-and-unicode) and based on underscores and original case (for pyyaml, the wheel filename uses `PyYAML`). For sdists, this is unspecified (see [this blog](https://blog.yossarian.net/2022/05/09/A-most-vexing-parse-but-for-Python-packaging) and [this issue](https://github.com/pypa/packaging/issues/527)).  
 >
->Tools like pip or Poetry will work with any name variant. For example, Poetry uses the original name from the package metadata (PyYAML) in pyproject.toml and poetry.lock, but you can poetry add pyyaml.
+>Tools like pip or Poetry will work with any name variant. For example, Poetry uses the original name from the package metadata (`PyYAML`) in pyproject.toml and poetry.lock, but you can `poetry add pyyaml`.
 
-I was interested in URL normalization which Claudio mentioned and made a small experiment - get the latest by update time package with all punctuation chars and watch how changing PyPI URL to the package will be processed.  
+>As an aside, name variants also exist for the console script (where applicable).
+- cogapp (cog)
+- rst-to-myst (rst2myst)
+Sometimes, only the "marketing name" and/or the repository name are different:
+- coverage (distribution, package, and script are named coverage, repository is named coveragepy, human-friendly name is Coverage.py)
+
+I was interested in trying URL normalization which Claudio mentioned and made a small experiment - get the latest by update time package with all punctuation chars and watch how changing PyPI URL to the package will be processed.  
+
 Now this package has the name `carson-tool.create_template`:
 
 ```python
