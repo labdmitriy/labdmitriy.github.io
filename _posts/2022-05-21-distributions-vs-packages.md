@@ -172,9 +172,11 @@ Names proportion: 0.00003
 Examples: ['vision_utils-0.1.1', '0-._.-._.-._.-._.-._.-._.-0', 'sloth-ci.ext.docker_exec']
 ```
 <br>
-Additionaly I created visualization for names which contain one or multiple punctuation chars:  
+Additionaly I created visualization for names which contain one or multiple punctuation chars using [matplotlib-venn](https://github.com/konstantint/matplotlib-venn) library:
 ![Python distribution names with punctuation](/assets/blog/2022-05-21-distributions-vs-packages/names_with_punctuation.png)  
+Due to the technical reasons there is a space for intersection of all 3 punctuation chars, but it is an expected behaviour and explained [here](https://github.com/konstantint/matplotlib-venn/issues/12).  
 
+**Findinds**  
 Based on these results we can make several interesting conclusions:
 - There are more than half (~51%) of the distributions without any punctuation chars
 - A lot of distributions use only hyphens in their names (~43%)
@@ -252,7 +254,7 @@ https://pypi.python.org/project/carson-tool.create.template -> https://pypi.org/
 I am very grateful to both authors for their answers, there is much more understanding now.
 
 
-## Conclusion
+## Summary  
 - Terminology for distributions and packages in Python can be quite ambiguous and it takes practice in order to distinguish between them
 - Packages naming has the most specific requirements
 - Distributions naming is not so obvious though the choice can be supported by both historical and technical points of views
