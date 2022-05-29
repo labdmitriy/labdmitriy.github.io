@@ -160,6 +160,7 @@ Names count: 11487
 Names proportion: 0.03036
 Examples: ['plone.introspector', 'RBX.py', 'danse.ins']
 
+
 # With all punctuation
 names_with_all_punctuation = get_names_stats(distributions, letters_digits | punctuation, 
                                              required_chars=punctuation)
