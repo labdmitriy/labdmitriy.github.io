@@ -123,9 +123,9 @@ names_letters_digits = get_names_stats(distributions, letters_digits)
 
 Possible chars: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 Required chars: 
-Names count: 192850
-Names proportion: 0.50967
-Examples: ['ipysplitpanes', 'chd', 'irate']
+Names count: 192944
+Names proportion: 0.50973
+Examples: ['harrpy', 'logconf', 'irate']
 
 
 # With only hyphens
@@ -134,9 +134,9 @@ names_with_only_hyphens = get_names_stats(distributions, letters_digits | hyphen
 
 Possible chars: -0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 Required chars: -
-Names count: 161003
-Names proportion: 0.42550
-Examples: ['fake-ssh', 'requests-async-session', 'neocrym-sphinx-theme']
+Names count: 161045
+Names proportion: 0.42546
+Examples: ['sentry-tablestore', 'requests-async-session', 'dash-loading-spinners']
 
 
 # With only underscores
@@ -146,7 +146,7 @@ names_with_only_underscores = get_names_stats(distributions, letters_digits | un
 Possible chars: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz
 Required chars: _
 Names count: 10650
-Names proportion: 0.02815
+Names proportion: 0.02814
 Examples: ['nextcloud_news_updater', 'nose_priority', 'dms_tools']
 
 
@@ -156,8 +156,8 @@ names_with_only_dots = get_names_stats(distributions, letters_digits | dot,
 
 Possible chars: .0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
 Required chars: .
-Names count: 11487
-Names proportion: 0.03036
+Names count: 11489
+Names proportion: 0.03035
 Examples: ['plone.introspector', 'RBX.py', 'danse.ins']
 
 
@@ -173,8 +173,11 @@ Examples: ['vision_utils-0.1.1', '0-._.-._.-._.-._.-._.-._.-0', 'sloth-ci.ext.do
 ```
 <br>
 Additionaly I created visualization for names which contain one or multiple punctuation chars using [matplotlib-venn](https://github.com/konstantint/matplotlib-venn) library:
-![Python distribution names with punctuation](/assets/blog/2022-05-21-distributions-vs-packages/names_with_punctuation.png)  
+![Python distribution names with punctuation - Venn diagram](/assets/blog/2022-05-21-distributions-vs-packages/names_with_punctuation_venn.png)  
 Due to the technical reasons there is a space for intersection of all 3 punctuation chars, but it is an expected behaviour and explained [here](https://github.com/konstantint/matplotlib-venn/issues/12).  
+
+An alternative way which I found to visualize multiple sets relationship is [UpSetPlot](https://github.com/jnothman/UpSetPlot) and I decided to use it for our case:
+![Python distribution names with punctuation - UpSetPlot](/assets/blog/2022-05-21-distributions-vs-packages/names_with_punctuation_upset.png)  
 
 **Findinds**  
 Based on these results we can make several interesting conclusions:
@@ -189,7 +192,7 @@ Based on these results we can make several interesting conclusions:
 I decided to ask the authors of Py-Pkgs and Hypermodern Python cookiecutter template why they choose underscore and hyphen accordingly.
 
 **Py-Pkgs**  
-Co-author of the Py-Pckg template, [Tomas Beuzen](https://www.tomasbeuzen.com/), [answers](https://github.com/py-pkgs/py-pkgs-cookiecutter/issues/48) about their choice:  
+Co-author of the Py-Pkgs template, [Tomas Beuzen](https://www.tomasbeuzen.com/), [answers](https://github.com/py-pkgs/py-pkgs-cookiecutter/issues/48) about their choice:  
 > ...because it is simpler, less cognitive-load (esp. for the beginner), and to us, it seems logical.`
 
 Tomas also provides an interesting [link](https://developers.google.com/style/filenames) that Google now explicitly recommends using hyphens in file and directory names in their developer documentation (but they don't explain why).
