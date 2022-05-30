@@ -76,13 +76,16 @@ For the methods 2 and 3 you can find all the code and extended statistics in the
 > 1. ... Long, concatenated words are hard to understand. ...
 > 2. "_" is harder to type than "-"
 
-- I've found 3 popular [cookiecutter](https://github.com/cookiecutter/cookiecutter) templates for Python packages:
+- I've found 4 popular [cookiecutter](https://github.com/cookiecutter/cookiecutter) templates for Python packages:
   - [Cookiecutter Data Science](https://github.com/drivendata/cookiecutter-data-science)  
   [Version 2](https://github.com/drivendata/cookiecutter-data-science/tree/v2) of this template accepts hyphens for distribution names.
-  - [Hypermodern Python](https://github.com/cjolowicz/cookiecutter-hypermodern-python)  
-  This template is based on awesome [article series](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/) and there is an explicit [recommendation](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/#:~:text=Use%20snake%20case%20for%20the%20package%20name%20hypermodern_python%2C%20as%20opposed%20to%20the%20kebab%20case%20used%20for%20the%20repository%20name%20hypermodern%2Dpython.%20In%20other%20words%2C%20name%20the%20package%20after%20your%20repository%2C%20replacing%20hyphens%20by%20underscores.) to use hyphen for distribution name.
   - [Py-Pkgs](https://github.com/py-pkgs/py-pkgs-cookiecutter)  
     This template complements incredibly useful [book](https://py-pkgs.org/) and forces using underscores for distribution names.
+  - [Hypermodern Python](https://github.com/cjolowicz/cookiecutter-hypermodern-python)  
+  This template is based on awesome [article series](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/) and there is an explicit [recommendation](https://cjolowicz.github.io/posts/hypermodern-python-01-setup/#:~:text=Use%20snake%20case%20for%20the%20package%20name%20hypermodern_python%2C%20as%20opposed%20to%20the%20kebab%20case%20used%20for%20the%20repository%20name%20hypermodern%2Dpython.%20In%20other%20words%2C%20name%20the%20package%20after%20your%20repository%2C%20replacing%20hyphens%20by%20underscores.) to use hyphen for distribution names.
+  - [pylibrary](https://github.com/ionelmc/cookiecutter-pylibrary)  
+    This template has explicit distinction between repository, distribution and package names and hyphens are converted to underscores for distribution names.
+
 
 - There is also an interesting [research](https://moduscreate.com/blog/github-semantic-naming/) about repositories naming, but I was searching more facts about Python distribution itself based on more complete data.
 
@@ -184,21 +187,31 @@ Based on these results we can make several interesting conclusions:
 - There are more than half (~51%) of the distributions without any punctuation chars
 - A lot of distributions use only hyphens in their names (~43%)
 - Distribution names with only dots are also used (~3%) and more frequently than only underscores (~2.8%)
-- There are distributions with all punctuation chars but there are very few of them (13 packages).
-  As we can see in the examples above, even distributions with names like `0-._.-._.-._.-._.-._.-._.-0` are acceptable for PyPI repository.
+- There are distributions with all punctuation chars but there are very few of them (13 packages)  
+  As we can see in the examples above, even distributions with names like `0-._.-._.-._.-._.-._.-._.-0` are acceptable for PyPI repository
 
 
 ### Answers from experts
-I decided to ask the authors of Py-Pkgs and Hypermodern Python cookiecutter template why they choose underscore and hyphen accordingly.
+I decided to ask the authors of `Py-Pkgs`, `pylibrary` and `Hypermodern Python` cookiecutter templates why they choose underscore or hyphen.
 
 **Py-Pkgs**  
-Co-author of the Py-Pkgs template, [Tomas Beuzen](https://www.tomasbeuzen.com/), [answers](https://github.com/py-pkgs/py-pkgs-cookiecutter/issues/48) about their choice:  
-> ...because it is simpler, less cognitive-load (esp. for the beginner), and to us, it seems logical.`
+Co-author of the `Py-Pkgs` template, [Tomas Beuzen](https://www.tomasbeuzen.com/), [answers](https://github.com/py-pkgs/py-pkgs-cookiecutter/issues/48) about their choice:  
+> ... because it is simpler, less cognitive-load (esp. for the beginner), and to us, it seems logical.`
 
 Tomas also provides an interesting [link](https://developers.google.com/style/filenames) that Google now explicitly recommends using hyphens in file and directory names in their developer documentation (but they don't explain why).
 
+**pylibrary**  
+Author of the `pylibrary` template, [Ionel Cristian Mărieș](https://blog.ionelmc.ro/), has the following reason to choose hyphen:
+> ... you'll see dashes more often than underscores in urls in general. I haven't given it much thought, just went with what people usually have in urls (dashes instead of underscores) ...  
+
+He also gave the examples when repository, distribution and package names may differ:
+> I guess the main reason I have this dist/package/project name distinction is that I don't always have a consistent scheme for all my projects:
+>
+- Sometimes the dist name I want is already taken on PyPI.
+- Django projects have a differently styled project name.
+
 **Hypermodern Python**  
-Author of the Hypermoder Python template, [Claudio Jolowicz](https://cjolowicz.github.io/), really surprised me with his comprehensive [answer](https://github.com/cjolowicz/cookiecutter-hypermodern-python/discussions/1200) which includes both technical and historical notes.
+Author of the `Hypermoder Python` template, [Claudio Jolowicz](https://cjolowicz.github.io/), really surprised me with his comprehensive [answer](https://github.com/cjolowicz/cookiecutter-hypermodern-python/discussions/1200) which includes both technical and historical notes.
 
 His personal choice is also based on convenience:
 > Personally, I prefer package names with hyphens because I find them easier to read. 
@@ -254,7 +267,7 @@ https://pypi.python.org/project/carson-tool.create-template -> https://pypi.org/
 https://pypi.python.org/project/carson-tool.create.template -> https://pypi.org/project/carson-tool.create_template/
 ```
 
-I am very grateful to both authors for their answers, there is much more understanding now.
+I am very grateful to templates authors for their answers, there is much more understanding now.
 
 
 ## Summary  
