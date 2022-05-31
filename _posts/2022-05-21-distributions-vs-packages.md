@@ -2,7 +2,7 @@
 title: "Distributions vs packages in Python"
 excerpt: How to distinguish between these terms and choose their names.
 date: 2022-05-21 23:00:00 +0300
-last_modified_at: 2022-05-30 16:00:00 +0300
+last_modified_at: 2022-05-31 14:00:00 +0300
 toc: true
 categories:
 - Blog
@@ -22,7 +22,7 @@ So I decided to share some thoughts about it.
 If we try to search for _"package"_ definition, we can find in [The Hitchhiker’s Guide to Packaging](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/glossary.html#term-package) that among others it is:
 > A directory containing an \_\_init\_\_.py file ..., and also usually containing modules (possibly along with other packages).
 
-But probably this is not totally correct, because without \_\_init\_\_.py file it is still can be used as a namespace package, and there is a great [article](https://bastien-antoine.fr/2022/01/discovering-python-namespace-packages/) about that.
+Probably this is not complete defintion because without \_\_init\_\_.py file it is still can be used as a [namespace package](https://packaging.python.org/en/latest/guides/packaging-namespace-packages/), and there is a great [article](https://bastien-antoine.fr/2022/01/discovering-python-namespace-packages/) about that.
 
 Moreover, we also can read in [Python documentation's glossary](https://docs.python.org/3/glossary.html#term-package) (and it is also discussed in the article above) that there is a little difference between packages and modules:
 > Technically, a package is a Python module with an \_\_path\_\_ attribute.
@@ -37,9 +37,10 @@ At the same time:
 To complicate things even more, the glossary in [Python Package User Guide](https://packaging.python.org/en/latest/glossary/#term-Distribution-Package) has the term "Distribution Package" and contains the following remark:
 > A distribution package is more commonly referred to with the single words "package" or "distribution"
 
-Usually Python libraries use services like GitHub or GitLab to store the code.  
-Distribution names can be specified in distribution's metadata (e.g., _setup.py_, _setup.cfg_ and _pyproject.toml_ files), while repository names are managed by services.  
-So in fact repository name with code can have name other than the distribution name.
+Even in [PyPI documentation](https://pypi.org/help/#packages) we can read about _package_ term which essentialy is a _distribution_:
+> A "file", also known as a "package", on PyPI is something that you can download and install. Because of different hardware, operating systems, and file formats, a release may have several files (packages), like an archive containing source code or a binary wheel.
+
+Also Python libraries usually use services like GitHub or GitLab to store the code, so in fact repository name can have name other than the distribution name.
 
 As a result:
 - We have two terms (_distribution_ and _package_) that have different meaning but sometimes can be used interchangeably and therefore can confuse beginners
@@ -210,6 +211,8 @@ He also gave the examples when repository, distribution and package names may di
 - Sometimes the dist name I want is already taken on PyPI.
 - Django projects have a differently styled project name.
 
+> About the dashes... it's just styling at this point. https://pypi.org/project/lazy-object-proxy/ is the same as https://pypi.org/project/lazy_object_proxy/
+
 **Hypermodern Python**  
 Author of the `Hypermoder Python` template, [Claudio Jolowicz](https://cjolowicz.github.io/), really surprised me with his comprehensive [answer](https://github.com/cjolowicz/cookiecutter-hypermodern-python/discussions/1200) which includes both technical and historical notes.
 
@@ -242,10 +245,49 @@ Also technical details are very useful:
 Sometimes, only the "marketing name" and/or the repository name are different:
 - coverage (distribution, package, and script are named coverage, repository is named coveragepy, human-friendly name is Coverage.py)
 
-I was interested in trying URL normalization which Claudio mentioned and made a small experiment - get the latest by update time package with all punctuation chars and watch how changing PyPI URL to the package will be processed.  
+I am very grateful to templates authors for their answers, there is much more understanding now.  
 
-Now this package has the name `carson-tool.create_template`:
 
+## Additional experiments
+**URL normalization**  
+I was interested in trying URL normalization which was mentioned by experts and made a small experiment - use [python_reorder_import](https://github.com/asottile/reorder_python_imports/) distribution and watch how changing PyPI URL to the distribution will be processed:
+```python
+check_alternative_urls(distribution_name)
+
+https://pypi.python.org/project/reorder-python_imports -> https://pypi.org/project/reorder-python-imports/
+https://pypi.python.org/project/reorder.python_imports -> https://pypi.org/project/reorder-python-imports/
+https://pypi.python.org/project/reorder_python-imports -> https://pypi.org/project/reorder-python-imports/
+https://pypi.python.org/project/reorder_python.imports -> https://pypi.org/project/reorder-python-imports/
+```
+And all URLs are redirected to the URL with normalized distribution name as expected.
+
+**Installation**  
+An interesting fact that you can install distribution replacing any punctuation char by hyphen, underscore and dot or change letters case.  
+For example, the following commands will successfully install `python-reorder-import` distribution:
+```python
+pip install reorder-pYtHoN.imports
+poetry add reorder-pYtHoN.imports
+```
+
+For uninstallation it is a little more complicated:
+- For pip you can uninstall any alternative name:
+```python
+pip uninstall reorder-pYtHoN.imports
+```
+- It seems that for poetry you can use only normalized name:
+```python
+poetry remove reorder-python-imports
+```
+
+
+## Open questions
+What I still don't understand is different behavior for different packages.  
+
+For example, I found the latest by update time package with all punctuation chars and watch how changing PyPI URL to the package will be processed.  
+Now this packages is [carson-tool.create_template](https://github.com/CarsonSlovoka/carson-tool.create_template).
+Let's make the same experiments and compare results.
+
+**URL normalization**  
 ```python
 distribution_name = distribution_stats[distribution_stats == distribution_stats.max()].index.item()
 distribution_info = get_distribution_info(base_url, distribution_name)['info']
@@ -255,7 +297,7 @@ print(distribution_url)
 'https://pypi.org/project/carson-tool.create_template/'
 ```
 <br>
-The only difference from Claudio's statements was that URL is redirected from different URL variants to the **original** one, not **normalized** version of the name:
+The difference from the first experiments is that URL is redirected from different URL variants to the **original** one, not **normalized** version of the name:
 ```python
 check_alternative_urls(distribution_name)
 
@@ -266,8 +308,21 @@ https://pypi.python.org/project/carson-tool_create_template -> https://pypi.org/
 https://pypi.python.org/project/carson-tool.create-template -> https://pypi.org/project/carson-tool.create_template/
 https://pypi.python.org/project/carson-tool.create.template -> https://pypi.org/project/carson-tool.create_template/
 ```
+<br>
+**Installation**  
+If I install the package using `pip`:
+```python
+pip install carson-tool.create_template
+```
+<br>
+Then I can see in the packages list, that underscore char was replaced by hyphen, but dot char remain in place:
+```python
+pip list
 
-I am very grateful to templates authors for their answers, there is much more understanding now.
+carson-tool.create-template 0.2.0
+```
+<br>
+I would appreciate if somebody explains this behaviour because I didn't find any clear explanations for it.
 
 
 ## Summary  
