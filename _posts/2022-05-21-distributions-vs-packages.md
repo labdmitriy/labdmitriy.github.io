@@ -2,7 +2,7 @@
 title: "Distributions vs packages in Python"
 excerpt: How to distinguish between these terms and choose their names.
 date: 2022-05-21 23:00:00 +0300
-last_modified_at: 2022-05-31 14:00:00 +0300
+last_modified_at: 2022-06-01 09:00:00 +0300
 toc: true
 categories:
 - Blog
@@ -12,7 +12,7 @@ tags:
 ---
 
 ## Motivation
-Now I am gathering information and planning a series of articles dedicated to Python packages development, and while preparing I encounter some interesting facts that I hadn't thought about before.  
+Now I am gathering information and planning a series of articles dedicated to Python packages development and while preparing I encounter some interesting facts that I hadn't thought about before.  
 One of them is the ambiguity in terminology for distributions and packages in Python and their naming.  
 So I decided to share some thoughts about it.
 
@@ -22,13 +22,13 @@ So I decided to share some thoughts about it.
 If we try to search for _"package"_ definition, we can find in [The Hitchhiker’s Guide to Packaging](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/glossary.html#term-package) that among others it is:
 > A directory containing an \_\_init\_\_.py file ..., and also usually containing modules (possibly along with other packages).
 
-Probably this is not complete defintion because without \_\_init\_\_.py file it is still can be used as a [namespace package](https://packaging.python.org/en/latest/guides/packaging-namespace-packages/), and there is a great [article](https://bastien-antoine.fr/2022/01/discovering-python-namespace-packages/) about that.
+Probably this is not complete defintion because without \_\_init\_\_.py file it is still can be used as a [namespace package](https://packaging.python.org/en/latest/guides/packaging-namespace-packages/) and there is a great [article](https://bastien-antoine.fr/2022/01/discovering-python-namespace-packages/) about that.
 
 Moreover, we also can read in [Python documentation's glossary](https://docs.python.org/3/glossary.html#term-package) (and it is also discussed in the article above) that there is a little difference between packages and modules:
 > Technically, a package is a Python module with an \_\_path\_\_ attribute.
 
 **Distribution**  
-For _"distribution"_ definition, in the same glossary of [The Hitchhiker’s Guide to Packaging](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/glossary.html#term-distribution) we can find useful note that it is:
+For _"distribution"_ definition we can find useful note in the same glossary of [The Hitchhiker’s Guide to Packaging](https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/glossary.html#term-distribution):
 > A Python distribution is a versioned compressed archive file that contains Python packages, modules, and other resource files 
 
 At the same time:
@@ -40,10 +40,10 @@ To complicate things even more, the glossary in [Python Package User Guide](http
 Even in [PyPI documentation](https://pypi.org/help/#packages) we can read about _package_ term which essentialy is a _distribution_:
 > A "file", also known as a "package", on PyPI is something that you can download and install. Because of different hardware, operating systems, and file formats, a release may have several files (packages), like an archive containing source code or a binary wheel.
 
-Also Python libraries usually use services like GitHub or GitLab to store the code, so in fact repository name can have name other than the distribution name.
+Also Python libraries usually use services like GitHub or GitLab to store the code, so in fact repository name can be different from the distribution name.
 
 As a result:
-- We have two terms (_distribution_ and _package_) that have different meaning but sometimes can be used interchangeably and therefore can confuse beginners
+- We have two terms (_distribution_ and _package_) that have different meaning but sometimes are used interchangeably and therefore can confuse beginners
 - The names for installation (_distribution_), working with code (_repository_) and import (_package_) can be different 
 
 It was also complicated for me at the beginning, and I suppose that you start to clearly distinguish between these terms when you install libraries like _"scikit-learn"_ (distribution name) but import _"sklearn"_ (package name) or you delve into building Python libraries yourself.
@@ -51,11 +51,11 @@ It was also complicated for me at the beginning, and I suppose that you start to
 
 ## Naming
 **Package**  
-For Python packages (and modules) naming best practices it is pretty easy to find information in [Style Guide for Python Code](https://peps.python.org/pep-0008/#package-and-module-names):  
+Python naming best practices for the packages (and modules) are clearly defined in [Style Guide for Python Code](https://peps.python.org/pep-0008/#package-and-module-names):  
 > Modules should have short, all-lowercase names. Underscores can be used in the module name if it improves readability. Python packages should also have short, all-lowercase names, although the use of underscores is discouraged.
 
 **Distribution**  
-What about distribution names? To be honest, I didn't find any official information about it (e.g., in Python documentation or PEPs) and it is confirmed [here](https://stackoverflow.com/questions/54597212/using-hyphen-dash-in-python-repository-name-and-package-name/54599368#54599368):
+What about distribution names? To be honest, I didn't find any official information about it (e.g. in Python documentation or PEPs) and it is confirmed [here](https://stackoverflow.com/questions/54597212/using-hyphen-dash-in-python-repository-name-and-package-name/54599368#54599368):
 > PEP 8 has nothing to do with the question as it doesn't talk about distribution, only about importable packages and modules.
 
 This surprised me quite a lot because if I need to use underscores in the package name, what symbol I should use in distribution name?  
@@ -245,12 +245,12 @@ Also technical details are very useful:
 Sometimes, only the "marketing name" and/or the repository name are different:
 - coverage (distribution, package, and script are named coverage, repository is named coveragepy, human-friendly name is Coverage.py)
 
-I am very grateful to templates authors for their answers, there is much more understanding now.  
+I am grateful to the authors of these templates for their answers and insights.  
 
 
 ## Additional experiments
 **URL normalization**  
-I was interested in trying URL normalization which was mentioned by experts and made a small experiment - use [python_reorder_import](https://github.com/asottile/reorder_python_imports/) distribution and watch how changing PyPI URL to the distribution will be processed:
+I was interested in trying URL normalization which was mentioned by experts and made a small experiment - use [python_reorder_import](https://github.com/asottile/reorder_python_imports/) package and watch how changing PyPI URL to the package will be processed:
 ```python
 check_alternative_urls(distribution_name)
 
@@ -262,7 +262,7 @@ https://pypi.python.org/project/reorder_python.imports -> https://pypi.org/proje
 And all URLs are redirected to the URL with normalized distribution name as expected.
 
 **Installation**  
-An interesting fact that you can install distribution replacing any punctuation char by hyphen, underscore and dot or change letters case.  
+An interesting fact that you can install distribution replacing any punctuation char by hyphen, underscore and dot or change case of the letters.  
 For example, the following commands will successfully install `python-reorder-import` distribution:
 ```python
 pip install reorder-pYtHoN.imports
@@ -281,14 +281,15 @@ poetry remove reorder-python-imports
 
 
 ## Open questions
-What I still don't understand is different behavior for different packages.  
+What I still don't understand is not consistent behavior for different packages.  
 
-For example, I found the latest by update time package with all punctuation chars and watch how changing PyPI URL to the package will be processed.  
-Now this packages is [carson-tool.create_template](https://github.com/CarsonSlovoka/carson-tool.create_template).
+For example, I found the latest by update time package with all punctuation chars and now this package is [carson-tool.create_template](https://github.com/CarsonSlovoka/carson-tool.create_template).
 Let's make the same experiments and compare results.
 
 **URL normalization**  
 ```python
+distribution_update_stats, incorrect_distributions = get_distribution_update_stats(base_url, names_with_all_punctuation)
+distribution_stats = pd.Series(distribution_update_stats)
 distribution_name = distribution_stats[distribution_stats == distribution_stats.max()].index.item()
 distribution_info = get_distribution_info(base_url, distribution_name)['info']
 distribution_url = distribution_info['project_url']
@@ -297,7 +298,7 @@ print(distribution_url)
 'https://pypi.org/project/carson-tool.create_template/'
 ```
 <br>
-The difference from the first experiments is that URL is redirected from different URL variants to the **original** one, not **normalized** version of the name:
+Here URL is redirected from multiple URL variants to the **original** one, not **normalized** version of the name:
 ```python
 check_alternative_urls(distribution_name)
 
@@ -315,14 +316,14 @@ If I install the package using `pip`:
 pip install carson-tool.create_template
 ```
 <br>
-Then I can see in the packages list, that underscore char was replaced by hyphen, but dot char remain in place:
+Then I can see in the packages list that underscore char was replaced by hyphen but dot char remained unchanged:
 ```python
 pip list
 
 carson-tool.create-template 0.2.0
 ```
 <br>
-I would appreciate if somebody explains this behaviour because I didn't find any clear explanations for it.
+I would appreciate if somebody clarifies this behaviour because I didn't find any clear explanations for it.
 
 
 ## Summary  
