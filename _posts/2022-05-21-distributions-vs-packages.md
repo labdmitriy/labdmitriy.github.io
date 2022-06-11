@@ -2,7 +2,7 @@
 title: "Distributions vs packages in Python"
 excerpt: How to distinguish between these terms and choose their names.
 date: 2022-05-21 23:00:00 +0300
-last_modified_at: 2022-06-01 09:00:00 +0300
+last_modified_at: 2022-06-11 17:30:00 +0300
 toc: true
 categories:
 - Blog
