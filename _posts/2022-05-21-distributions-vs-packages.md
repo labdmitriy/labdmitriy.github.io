@@ -262,17 +262,17 @@ https://pypi.python.org/project/reorder_python.imports -> https://pypi.org/proje
 And all URLs are redirected to the URL with normalized distribution name as expected.
 
 **Installation**  
-An interesting fact that you can install distribution replacing any punctuation char by hyphen, underscore and dot or change case of the letters.  
+An interesting fact that you can install distribution replacing any punctuation char by any number of hyphens, underscores and dots or change case of the letters, as mentioned in [Python Packaging User Guide](https://packaging.python.org/en/latest/specifications/core-metadata/?highlight=hyphen#name).
 For example, the following commands will successfully install `python-reorder-import` distribution:
 ```python
-pip install reorder-pYtHoN.imports
-poetry add reorder-pYtHoN.imports
+pip install reorder-.__.-pYtHoN_-..-_imports
+poetry add reorder-.__.-pYtHoN_-..-_imports
 ```
 
 For uninstallation it is a little more complicated:
 - For pip you can uninstall any alternative name:
 ```python
-pip uninstall reorder-pYtHoN.imports
+pip uninstall reorder---pYtHoN...imports
 ```
 - It seems that for poetry you can use only normalized name:
 ```python
