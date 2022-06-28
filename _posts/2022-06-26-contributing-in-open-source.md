@@ -126,7 +126,7 @@ We can show all the steps described using Gantt chart:
 
 ![Gantt chart timeline](/assets/blog/2022-06-26-contributing-in-open-source/Gantt_Chart.png)  
 
-We can also visualize all the development steps in 44 seconds (moving icons - developers, tree - file system structure which is changing by developers):
+We can also visualize all the development steps in 44 seconds of video, moving icons are the developers and the tree is the file system structure which is changing by developers (for some reason this video is shown correctly on desktop but not on mobile devices):
 <video src="https://user-images.githubusercontent.com/9625027/173230769-c069d0f8-8352-4772-8fad-7d6b510d3227.mp4" controls="controls" style="max-width:100%;">
 </video>
 <br>
