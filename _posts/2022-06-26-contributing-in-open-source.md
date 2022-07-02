@@ -128,7 +128,7 @@ We can show all the steps described using Gantt chart:
 ![Gantt chart timeline](/assets/blog/2022-06-26-contributing-in-open-source/Gantt_Chart.png)  
 
 We can also visualize all the development steps in 44 seconds of video, moving icons are the developers and the tree is the file system structure which is changing by developers (for some reason this video is shown correctly on desktop but not on mobile devices):
-<video loop controls='true' width='100%' height='100%'>
+<video loop controls muted playsinline width='100%' height='100%'>
    <source src='https://user-images.githubusercontent.com/9625027/173230769-c069d0f8-8352-4772-8fad-7d6b510d3227.mp4' type='video/mp4'>
 </video>
 
@@ -142,7 +142,7 @@ Up to this point, we have considered the process more from an organizational poi
 For my case I drew the sequence diagram that shows all the steps in more detail.  
 It will be better to open it in a separate window to zoom in specific steps and follow the description below. 
 
-![Maintainer/contirubutor interaction](/assets/blog/2022-06-26-contributing-in-open-source/Sequence_Diagram.png)  
+![Maintainer/contributor interaction](/assets/blog/2022-06-26-contributing-in-open-source/Sequence_Diagram.png)
 
 **Steps description**  
 
