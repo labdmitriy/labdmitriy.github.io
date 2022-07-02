@@ -105,7 +105,7 @@ pip install docutils==0.17
 ```
 Where `$venv_dir` is the folder where you want to create this new virtual environment.
 
-Installing `docutils` package of verstion 0.17 was the key hint from the author for this step (thanks to the author again!).   
+Installing `docutils` package of version 0.17 was the key hint from the author for this step (thanks to the author again!).   
 By the way, installing only this Python package (and its dependencies) was enough for further successful book compilation.
 
 
