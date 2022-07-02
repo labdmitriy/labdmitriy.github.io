@@ -2,6 +2,7 @@
 title: "Contributing in open source"
 excerpt: Share my first experience in contributing to Python package.
 date: 2022-06-26 23:00:00 +0300
+last_modified_at: 2022-07-02 20:45:00 +0300
 toc: true
 categories:
 - Blog
@@ -127,8 +128,8 @@ We can show all the steps described using Gantt chart:
 ![Gantt chart timeline](/assets/blog/2022-06-26-contributing-in-open-source/Gantt_Chart.png)  
 
 We can also visualize all the development steps in 44 seconds of video, moving icons are the developers and the tree is the file system structure which is changing by developers (for some reason this video is shown correctly on desktop but not on mobile devices):
-<video src="https://user-images.githubusercontent.com/9625027/173230769-c069d0f8-8352-4772-8fad-7d6b510d3227.mp4" controls="controls" style="max-width:100%;">
-</video>
+<video loop controls='true' width='100%' src='https://user-images.githubusercontent.com/9625027/173230769-c069d0f8-8352-4772-8fad-7d6b510d3227.mp4' type='video/mp4'></video>
+
 <br>
 A lot of files were changed because during the work on the implementation, additional improvements were discussed and made by the author in other parts of the repository. For example, `isort`/`black`/`flake8` started to be used globally in the repository.
 
