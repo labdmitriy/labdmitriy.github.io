@@ -2,6 +2,7 @@
 title: "Building Scientific Visualization book"
 excerpt: How to build the latest version of the book from scratch.
 date: 2022-07-02 00:00:00 +0300
+last_modified_at: 2022-07-15 09:00:00 +0300
 toc: true
 categories:
 - Blog
@@ -147,6 +148,24 @@ For example, my configuration is the following:
 The first "." symbol is necessary to properly [propagate changes of .bashrc in the script](https://askubuntu.com/a/1041348) so all the changes will be executed in the current shell process.  
 
 Also I added the ability to measure the time of the script execution.
+
+
+### Further builds
+After everything is configured and executed for the first time, the next builds will be much easier:
+```bash
+cd <project_dir>
+source <venv_dir>/scientific-visualization-book/bin/activate
+make clean && make all
+```
+
+### PDF compression
+Also I found that there is another option in `Makefile` which allows to slightly reduce the size of the file:
+```bash
+make pdf-compressed
+```
+
+It will take some time and as a result the compressed file is about 22% less than the original one (~73MB vs ~94MB).
+I haven't checked the compressed version of the file thoroughly but maybe it will be useful for someone.
 
 
 ## Results
