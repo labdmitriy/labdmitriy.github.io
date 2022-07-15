@@ -164,7 +164,7 @@ Also I found that there is another option in `Makefile` which allows to slightly
 make pdf-compressed
 ```
 
-It will take some time and as a result the compressed file is about 22% less than the original one (~73MB vs ~94MB).
+It will take some time and as a result the compressed file (`pdf/book_compressed.pdf`) is about 22% less than the original one (~73MB vs ~94MB).
 I haven't checked the compressed version of the file thoroughly but maybe it will be useful for someone.
 
 
